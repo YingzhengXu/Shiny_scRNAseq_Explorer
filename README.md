@@ -1,44 +1,46 @@
-Shiny scRNA-seq Explorer
-This repository contains a Shiny application for interactive visualization and analysis of single-cell RNA sequencing (scRNA-seq) data. The app is designed to support exploration of clustering, gene expression, and pathway activity from Seurat objects.
+# Shiny scRNA-seq Explorer
 
-Features
-Cluster visualization:
-Interactive DimPlot for t-SNE, UMAP, or PCA, with options to group or split by metadata (e.g., clustering resolutions, sample IDs).
+This repository contains a Shiny application for interactive visualization and analysis of single-cell RNA sequencing (scRNA-seq) data using Seurat objects.
 
-Gene expression visualization:
-FeaturePlot for single or multiple genes, supporting split views and adjustable rendering (fast raster or high-quality vector).
+## Features
 
-Pathway analysis:
-View pathway activity as t-SNE overlays and heatmaps using custom gene sets (e.g., fgsea results).
+- **Cluster Visualization**
+  - Interactive `DimPlot` (t-SNE, UMAP, PCA)
+  - Group or split by multiple metadata fields
+  - Downloadable plots
 
-Custom differential expression:
-Compare selected groups and generate volcano plots and downloadable DE tables.
+- **Gene Expression**
+  - `FeaturePlot` for single or multiple genes
+  - Split plots by metadata
+  - Raster or vector rendering options
+  - Downloadable plots
 
-Requirements
-R (>= 4.0)
-R packages:
+- **Pathway Analysis**
+  - Overlay pathway activity on t-SNE plots
+  - Generate heatmaps grouped by metadata
+  - Downloadable pathway plots
 
-shiny
+- **Custom Differential Expression**
+  - Select custom metadata groupings for DE analysis
+  - Volcano plots with automatic gene labeling
+  - Downloadable DE tables and plots
 
-shinydashboard
+## Requirements
 
-shinycssloaders
+- **R version:** >= 4.0
+- **Packages:**
+  - `shiny`
+  - `shinydashboard`
+  - `shinycssloaders`
+  - `dplyr`
+  - `Seurat`
+  - `ggplot2`
+  - `ggrepel`
+  - `viridis`
+  - `stringr`
 
-dplyr
+## Files
 
-Seurat
-
-ggplot2
-
-ggrepel
-
-viridis
-
-stringr
-
-Files
-app.R: Main Shiny app code (UI + server)
-
-fgsea_sets.RDS: RDS file containing gene sets used for pathway visualization
-
-singlet.df.rds: Seurat object for scRNA-seq data
+- `app.R` — Main Shiny app code (UI + server logic)
+- `fgsea_sets.RDS` — Precomputed pathway gene sets
+- `sample_seuratobj.rds` — Sample seurat object containing single-cell data
